@@ -56,13 +56,17 @@ const deleteItem = ()=>{
 	}
 };
 
-/********* Game ***********/
-var count = 0;
+/********* Game at  pg 168 ***********/
+var loops = 0;
 const startGame = ()=>{
-	count += 1;
-	console.log(count);
-	const countNode = document.getElementById('count');
-	console.log(countNode);
-	countNode.innerHTML = count;
-	setTimeout(startGame,1000 )
+	gameLoop();
 };
+const gameLoop = ()=>{
+	loops++;
+	console.log(loops);
+	if(loops<12){
+		setTimeout(gameLoop, 3000)
+	}else{
+		alert('GAME OVER!')
+	}
+}

@@ -59,3 +59,11 @@ ol{
 	margin: 20px;
 	width:650px;
 }
+.character{
+	background-color: lightblue;
+	width: 120px;
+	height: 120px;
+	padding: 10px;
+	margin: 10px;
+	float: left;
+}
