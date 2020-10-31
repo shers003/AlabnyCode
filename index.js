@@ -41,7 +41,7 @@ const addItem = ()=>{
 	const newListItem = document.createElement('li');
 	newListItem.innerHTML = newItemText;
 	itemList.appendChild(newListItem);
-	
+
 	console.log('User item is '+newItemText)
 };
 
@@ -52,6 +52,17 @@ const deleteItem = ()=>{
 	if(listItem[0] == undefined){
 		console.log('NOTHING');
 	}else{
-		listItem[0].remove();	
+		listItem[0].remove();
 	}
+};
+
+/********* Game ***********/
+var count = 0;
+const startGame = ()=>{
+	count += 1;
+	console.log(count);
+	const countNode = document.getElementById('count');
+	console.log(countNode);
+	countNode.innerHTML = count;
+	setTimeout(startGame,1000 )
 };

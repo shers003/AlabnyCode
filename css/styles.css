@@ -1,3 +1,4 @@
+ /************* Basic page************/
 body{
 	text-align:center;
 }
@@ -11,26 +12,32 @@ ol{
 	font-size:25px;
 	color:white;
 }
+.row{
+	background-color:#333456;
+	color: #ffff;
+	opacity: 0.6;
+}
+.row:nth-child(2n){
+	background-color:#e6b83c;
+	color:black;
+	opacity: 1;
+}
+
+/****** Lesson 2******/
 .img{
 	height:500px;
 	width:500px;
 }
-.row{
-	background-color:#333456;
-}
-.row:nth-child(2n){
-	background-color:#e6b83c;
-}
 .carousel{
 	margin:40px;
 }
-
 .dropdown{
 	position:fixed;
 	left:80%;
 	z-index:2;
 }
 
+/****** Lesson 3******/
 .navbar{
 	background-color:#e6b83c;
 }
@@ -42,4 +49,13 @@ ol{
 
 .card{
 	width:60%;
+}
+
+/********* Game ***********/
+#board{
+	border: 1px solid black;
+	background-color: grey;
+	height:350px;
+	margin: 20px;
+	width:650px;
 }
