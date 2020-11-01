@@ -28,8 +28,6 @@
 				<div class="row">
 					<div class="col-6"><button class='btn btn-secondary' onclick="explosion()">Explosion</button></div>
 					<div class="col-6"><button class='btn btn-secondary' onclick="water()">water</button></div>
-				</div>
-				<div class="row">
 					<div class="col-12">
 					<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
 						<div class="carousel-inner">
@@ -53,12 +51,13 @@
 					</a>
 					</div>
 				</div>
+				<div class="col-lg-12">
+					<div ><input type='text' id='userItem' vlaue='enter a name'/>
+					<button class='btn btn-primary' onclick='addItem()'>Add item</button><button class='btn btn-primary' onclick='deleteItem()'>remove last item</button>
+					<ol id='itemList'></ol></div>
+				</div>
 			</div>
-			<div class='row'>
-				<div class='col-12'><input type='text' id='userItem' vlaue='enter a name'/></div>
-				<div class='col-6'><button class='btn btn-primary' onclick='addItem()'>Add item</button><button class='btn btn-primary' onclick='deleteItem()'>remove last item</button></div>
-				<div class='col-6'><ol id='itemList'></ol></div>
-			</div>
+
 			</section>
 
 			<section id='27/10'>
@@ -80,6 +79,9 @@
 								  <li class="nav-item">
 									<a class="nav-link" href="#27/10">27/10</a>
 								  </li>
+									<li class="nav-item">
+									<a class="nav-link" href="#31/10">Mission 5</a>
+								  </li>
 								  <li class="nav-item">
 									<a class="nav-link" href="#">coming soon</a>
 								  </li>
@@ -93,7 +95,7 @@
 						  <p class="lead">I am the a low level fututre master computer wizard</p>
 						  <hr class="my-4">
 						  <p>This is a indisputable fact</p>
-						  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+						  <a class="btn btn-primary btn-lg" href="https://github.com/shers003" target='blank' role="button">Learn more</a>
 						</div>
 					</div>
 					<div class='col-3'>
@@ -107,13 +109,14 @@
 			<section id="31/10">
 				<div class="row">
 					<div class="col-lg-12">
-						<h1>Mssion 5 task</h1>
+						<h1>Mission 5 task</h1>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
 						<input type="button" onclick="startGame()" value="start">
 						<div id="board">
+							<h3 id="score"></h3>
 							<div class="character">
 								1
 							</div>
