@@ -54,6 +54,7 @@
 				<div class="col-lg-12">
 					<div ><input type='text' id='userItem' vlaue='enter a name'/>
 					<button class='btn btn-primary' onclick='addItem()'>Add item</button><button class='btn btn-primary' onclick='deleteItem()'>remove last item</button>
+					<button class='btn btn-primary' type="button" name="button" onclick="load()">Load</button>
 					<ol id='itemList'></ol></div>
 				</div>
 			</div>
@@ -95,7 +96,9 @@
 						  <p class="lead">I am the a low level fututre master computer wizard</p>
 						  <hr class="my-4">
 						  <p>This is a indisputable fact</p>
-						  <a class="btn btn-primary btn-lg" href="https://github.com/shers003" target='blank' role="button">Learn more</a>
+							<input id="lesson3password" type="password" name="" value="">
+							<!-- in a adding a return false means nothing will happen  -->
+						  <a class="btn btn-primary btn-lg" href="https://github.com/shers003" target='blank' onclick="return passwordCheck();" role="button">Learn more</a>
 						</div>
 					</div>
 					<div class='col-3'>

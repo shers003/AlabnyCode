@@ -35,6 +35,8 @@ const suprise = ()=>{
 		}
 };
 
+
+/************** Addded load btn with Mission 3**************/
 const addItem = ()=>{
 	const newItemText = document.getElementById('userItem').value;
 	const itemList = document.getElementById('itemList');
@@ -43,17 +45,42 @@ const addItem = ()=>{
 	itemList.appendChild(newListItem);
 
 	console.log('User item is '+newItemText)
+	saveItem((res)=>{
+		console.log('saved items '+res)
+	})
+
+
 };
 
 const deleteItem = ()=>{
 	const itemList = document.getElementById('itemList');
 	const listItem = document.querySelectorAll('#itemList li:last-child');
+
 	console.log(listItem);
+
 	if(listItem[0] == undefined){
 		console.log('NOTHING');
 	}else{
 		listItem[0].remove();
 	}
+
+	saveItem((res)=>{
+		console.log('saved items '+res)
+	})
+};
+
+const saveItem = (cb)=>{
+	const items = document.getElementById('itemList').innerHTML;
+	localStorage.list = items
+	if(cb){
+		cb(items);
+	}
+
+};
+
+const load = ()=>{
+	const list = document.getElementById('itemList');
+	list.innerHTML = localStorage.list;
 };
 
 /********* Game ***********/
@@ -101,7 +128,7 @@ const characterCreator = ()=>{
 	var clickcount = true;
 
 	characters.forEach((character)=>{
-		character.innerHTML = 'Guset';
+		character.innerHTML = 'Guest';
 		character.className = classSet;
 		character.onclick = ()=>{
 			if(clickcount){
@@ -128,4 +155,17 @@ const characterCreator = ()=>{
 
 	}
 
+};
+
+/**************** mission 2 password************/
+const passwordCheck = ()=>{
+	const lesson3password = document.getElementById('lesson3password');
+	const password = lesson3password.value;
+	if(password == 'iWholeHeartedlyAgree'){
+		alert('My friend come through')
+		return true;
+	}else{
+		alert('Sorry you need to find out the password')
+		return false;
+	}
 };
