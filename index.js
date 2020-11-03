@@ -180,7 +180,7 @@ var board =
  '','','',
  '','',''];
 var boxes = [];
-var loops = 0;
+var over = false;
 
 const startTic = ()=>{
 	alert('Each go lasts 3 seconds')
@@ -203,10 +203,10 @@ const gameLoopTic = (cb)=>{
 
 	turn = !turn
 	playerGo();
-	console.log(board);
 
 
-	if(loops<8){
+	console.log(over);
+	if(loops<8 && !over){
 		setTimeout(gameLoopTic, 3000);
 		loops++
 	}else{
@@ -232,18 +232,31 @@ const gameLoopTic = (cb)=>{
 };
 
 const playerGo = ()=>{
+	var clicked = true;
 	if(!turn){
 		console.log(p1+' turn');
 
 		boxes.forEach((box)=>{
 
 			box.onclick = ()=>{
-				var value = checkValue(box);
-				if (value){
-					box.innerHTML = p1;
-					var boxIndex = Number(box.id.slice(box.id.length-1,box.id.length));
-					board[boxIndex] = p1;
+
+				if(clicked){
+
+					var value = checkValue(box);
+
+					if (value){
+
+						var boxIndex = Number(box.id.slice(box.id.length-1,box.id.length));
+
+						box.innerHTML = p1;
+						board[boxIndex] = p1;
+						clicked = !clicked;
+						checkWin(p1);
+
+					}
+
 				}
+
 			}
 		});
 	}else{
@@ -252,13 +265,26 @@ const playerGo = ()=>{
 		boxes.forEach((box)=>{
 
 			box.onclick = ()=>{
-				var value = checkValue(box);
-				if (value){
-					box.innerHTML = p2;
-					var boxIndex = Number(box.id.slice(box.id.length-1,box.id.length));
-					board[boxIndex] = p2;
+
+				if(clicked){
+
+					var value = checkValue(box);
+
+					if (value){
+
+						var boxIndex = Number(box.id.slice(box.id.length-1,box.id.length));
+
+						box.innerHTML = p2;
+						board[boxIndex] = p2;
+						clicked = !clicked;
+						checkWin(p2);
+
+					}
+
 				}
+
 			}
+
 		});
 	}
 };
@@ -271,6 +297,20 @@ const checkValue = (box)=>{
 		return false;
 	}
 };
-const checkWin = ()=>{
-
+const checkWin = (symbol)=>{
+	if(board[0]==symbol && board[1]==symbol && board[2]==symbol){
+		over = !over;
+	}
+	else if (board[3]==symbol && board[4]==symbol && board[5]==symbol) {
+		over = !over;
+	}
+	else if (board[6]==symbol && board[7]==symbol && board[8]==symbol) {
+		over = !over;
+	}
+	else if (board[0]==symbol && board[4]==symbol && board[8]==symbol) {
+		over = !over;
+	}
+	else if (board[2]==symbol && board[4]==symbol && board[6]==symbol) {
+		over = !over;
+	}
 };
