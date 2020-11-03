@@ -141,8 +141,8 @@ const characterCreator = ()=>{
 		}
 	}
 	});
-	characters[randomNum-1].innerHTML = 'Tief'
-	characters[randomNum-1].className = classSet+' tief';
+	characters[randomNum-1].innerHTML = 'Thief'
+	characters[randomNum-1].className = classSet+' thief';
 	characters[randomNum-1].onclick = ()=>{
 		if(clickcount){
 			playerScore++;
@@ -168,4 +168,109 @@ const passwordCheck = ()=>{
 		alert('Sorry you need to find out the password')
 		return false;
 	}
+};
+
+/**********Tick tac Toe************/
+
+const p1 = 'X';
+const p2 = 'O';
+var turn = true;
+var board =
+['','','',
+ '','','',
+ '','',''];
+var boxes = [];
+var loops = 0;
+
+const startTic = ()=>{
+	alert('Each go lasts 3 seconds')
+
+	var index = 0;
+	board.forEach((position)=>{
+		var  box = document.getElementById('box'+index);
+		boxes[index] = box;
+		position = box.innerHTML
+		index++
+	});
+
+		gameLoopTic(()=>{
+			console.log('Game started');
+		});
+
+};
+
+const gameLoopTic = (cb)=>{
+
+	turn = !turn
+	playerGo();
+	console.log(board);
+
+
+	if(loops<8){
+		setTimeout(gameLoopTic, 3000);
+		loops++
+	}else{
+
+		boxes.forEach((box)=>{
+			box.innerHTML = "";
+		});
+
+		alert('gameover');
+
+		turn = true;
+		board =
+		['','','',
+		 '','','',
+		 '','',''];
+		 boxes = [];
+		 loops = 0;
+	}
+
+	if(cb){
+		cb();
+	}
+};
+
+const playerGo = ()=>{
+	if(!turn){
+		console.log(p1+' turn');
+
+		boxes.forEach((box)=>{
+
+			box.onclick = ()=>{
+				var value = checkValue(box);
+				if (value){
+					box.innerHTML = p1;
+					var boxIndex = Number(box.id.slice(box.id.length-1,box.id.length));
+					board[boxIndex] = p1;
+				}
+			}
+		});
+	}else{
+		console.log(p2+' turn');
+
+		boxes.forEach((box)=>{
+
+			box.onclick = ()=>{
+				var value = checkValue(box);
+				if (value){
+					box.innerHTML = p2;
+					var boxIndex = Number(box.id.slice(box.id.length-1,box.id.length));
+					board[boxIndex] = p2;
+				}
+			}
+		});
+	}
+};
+
+const checkValue = (box)=>{
+	var txt = box.innerHTML;
+	if(txt == ''){
+		return true;
+	}else{
+		return false;
+	}
+};
+const checkWin = ()=>{
+
 };

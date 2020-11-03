@@ -74,6 +74,29 @@ ol{
 }
 .visible{
 	visibility: visible;
-}.tief{
+}.thief{
 	background-color: red;
+}
+
+/********* TicTacToe ***********/
+.ticMain{
+	margin: 50px auto;
+	height: 240px;
+	width: 240px;
+	background-color: white;
+	color: white;
+}
+
+td{
+  background-color: #2a313d;
+  height: 80px;
+  width: 80px;
+  font-size: 30px;
+  border-radius: 20px;
+
+  border: 8px solid white;
+}
+
+td:hover{
+	background-color: #525c6b;
 }
