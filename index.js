@@ -181,9 +181,11 @@ var board =
  '','',''];
 var boxes = [];
 var over = false;
+var timeTic = 5000;
 
 const startTic = ()=>{
-	alert('Each go lasts 3 seconds')
+	ticTime();
+	alert('Each go lasts '+timeTic/1000 +' seconds')
 
 	var index = 0;
 	board.forEach((position)=>{
@@ -207,7 +209,7 @@ const gameLoopTic = (cb)=>{
 
 	console.log(over);
 	if(loops<8 && !over){
-		setTimeout(gameLoopTic, 3000);
+		setTimeout(gameLoopTic, time);
 		loops++
 	}else{
 
@@ -224,6 +226,7 @@ const gameLoopTic = (cb)=>{
 		 '','',''];
 		 boxes = [];
 		 loops = 0;
+		 over = false;
 	}
 
 	if(cb){
@@ -232,10 +235,11 @@ const gameLoopTic = (cb)=>{
 };
 
 const playerGo = ()=>{
+	const display = document.getElementById('timeTic');
 	var clicked = true;
 	if(!turn){
 		console.log(p1+' turn');
-
+		display.value = p1 +' Go'
 		boxes.forEach((box)=>{
 
 			box.onclick = ()=>{
@@ -261,6 +265,7 @@ const playerGo = ()=>{
 		});
 	}else{
 		console.log(p2+' turn');
+		display.value = p2 +' Go'
 
 		boxes.forEach((box)=>{
 
@@ -300,17 +305,46 @@ const checkValue = (box)=>{
 const checkWin = (symbol)=>{
 	if(board[0]==symbol && board[1]==symbol && board[2]==symbol){
 		over = !over;
+		alert(symbol + ' has Won');
 	}
 	else if (board[3]==symbol && board[4]==symbol && board[5]==symbol) {
 		over = !over;
+		alert(symbol + ' has Won');
 	}
 	else if (board[6]==symbol && board[7]==symbol && board[8]==symbol) {
 		over = !over;
+		alert(symbol + ' has Won');
 	}
 	else if (board[0]==symbol && board[4]==symbol && board[8]==symbol) {
 		over = !over;
+		alert(symbol + ' has Won');
 	}
 	else if (board[2]==symbol && board[4]==symbol && board[6]==symbol) {
 		over = !over;
+		alert(symbol + ' has Won');
 	}
+	else if (board[0]==symbol && board[3]==symbol && board[6]==symbol) {
+		over = !over;
+		alert(symbol + ' has Won');
+	}
+	else if (board[1]==symbol && board[4]==symbol && board[7]==symbol) {
+		over = !over;
+		alert(symbol + ' has Won');
+	}
+	else if (board[2]==symbol && board[5]==symbol && board[8]==symbol) {
+		over = !over;
+		alert(symbol + ' has Won');
+	}
+};
+
+const ticTime = ()=>{
+	const time = document.getElementById('timeTic');
+	const chosenTime = Number(time.value) * 1000;
+	if(chosenTime == ''){
+
+	}else{
+		timeTic = chosenTime;
+		console.log(timeTic);
+	}
+
 };

@@ -79,6 +79,10 @@ ol{
 }
 
 /********* TicTacToe ***********/
+#ticTacToe input{
+	
+}
+
 .ticMain{
 	margin: 50px auto;
 	height: 240px;
