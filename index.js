@@ -184,8 +184,8 @@ var over = false;
 var timeTic = 5000;
 
 const startTic = ()=>{
-	ticTime();
-	alert('Each go lasts '+timeTic/1000 +' seconds')
+	//ticTime();
+	//alert('Each go lasts '+timeTic/1000 +' seconds')
 
 	var index = 0;
 	board.forEach((position)=>{
@@ -203,21 +203,21 @@ const startTic = ()=>{
 
 const gameLoopTic = (cb)=>{
 
+	const display = document.getElementById('timeTic');
+
+	loops++;
+	console.log(loops);
 	turn = !turn
-	playerGo();
 
 
 	console.log(over);
-	if(loops<8 && !over){
-		setTimeout(gameLoopTic, time);
-		loops++
-	}else{
 
+	if(loops>=10 || over){
 		boxes.forEach((box)=>{
 			box.innerHTML = "";
 		});
 
-		alert('gameover');
+		alert('GAMEOVER');
 
 		turn = true;
 		board =
@@ -227,6 +227,11 @@ const gameLoopTic = (cb)=>{
 		 boxes = [];
 		 loops = 0;
 		 over = false;
+		 display.innerHTML = '';
+
+	}else{
+		console.log('Play on');
+		playerGo();
 	}
 
 	if(cb){
@@ -256,6 +261,7 @@ const playerGo = ()=>{
 						board[boxIndex] = p1;
 						clicked = !clicked;
 						checkWin(p1);
+						gameLoopTic();
 
 					}
 
@@ -283,6 +289,7 @@ const playerGo = ()=>{
 						board[boxIndex] = p2;
 						clicked = !clicked;
 						checkWin(p2);
+						gameLoopTic();
 
 					}
 
@@ -303,48 +310,51 @@ const checkValue = (box)=>{
 	}
 };
 const checkWin = (symbol)=>{
+
+	const display = document.getElementById('timeTic');
+
 	if(board[0]==symbol && board[1]==symbol && board[2]==symbol){
 		over = !over;
-		alert(symbol + ' has Won');
+		display.value = symbol + ' has Won';
 	}
 	else if (board[3]==symbol && board[4]==symbol && board[5]==symbol) {
 		over = !over;
-		alert(symbol + ' has Won');
+		display.value = symbol + ' has Won';
 	}
 	else if (board[6]==symbol && board[7]==symbol && board[8]==symbol) {
 		over = !over;
-		alert(symbol + ' has Won');
+		display.value = symbol + ' has Won';
 	}
 	else if (board[0]==symbol && board[4]==symbol && board[8]==symbol) {
 		over = !over;
-		alert(symbol + ' has Won');
+		display.value = symbol + ' has Won';
 	}
 	else if (board[2]==symbol && board[4]==symbol && board[6]==symbol) {
 		over = !over;
-		alert(symbol + ' has Won');
+		display.value = symbol + ' has Won';
 	}
 	else if (board[0]==symbol && board[3]==symbol && board[6]==symbol) {
 		over = !over;
-		alert(symbol + ' has Won');
+		display.value = symbol + ' has Won';
 	}
 	else if (board[1]==symbol && board[4]==symbol && board[7]==symbol) {
 		over = !over;
-		alert(symbol + ' has Won');
+		display.value = symbol + ' has Won';
 	}
 	else if (board[2]==symbol && board[5]==symbol && board[8]==symbol) {
 		over = !over;
-		alert(symbol + ' has Won');
+		display.value = symbol + ' has Won';
 	}
 };
 
 const ticTime = ()=>{
 	const time = document.getElementById('timeTic');
-	const chosenTime = Number(time.value) * 1000;
-	if(chosenTime == ''){
-
+	const chosenTime = Number(time.value) * 10000;
+	if(isNaN(chosenTime) || chosenTime == ''){
+		console.log('nothing '+ timeTic);
 	}else{
 		timeTic = chosenTime;
-		console.log(timeTic);
+		console.log('something ' +timeTic);
 	}
 
 };
