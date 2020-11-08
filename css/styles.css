@@ -80,7 +80,7 @@ ol{
 
 /********* TicTacToe ***********/
 #ticTacToe input{
-	
+
 }
 
 .ticMain{
@@ -103,4 +103,27 @@ td{
 
 td:hover{
 	background-color: #525c6b;
+}
+
+/******* guessGame *******/
+
+#guessNumber p{
+	font-size: 20px;
+}
+.guessGame{
+	background-color: white;
+	height: 240px;
+	width: 240px;
+	padding: 20px;
+	margin: 50px auto;
+}
+#guessHigher,#guessLower{
+	background-color: pink;
+	height: 64px;
+	width: 104px;
+	margin: 10px auto;
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 20px;
+
 }
