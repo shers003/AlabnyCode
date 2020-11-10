@@ -18,6 +18,7 @@ ol{
 	color: #ffff;
 	opacity: 0.6;
 }
+
 .row:nth-child(2n){
 	background-color:#e6b83c;
 	color:black;
@@ -126,4 +127,20 @@ td:hover{
 	font-weight: bold;
 	border-radius: 20px;
 
+}
+
+
+/******* Dice game *********/
+#diceGameBoard{
+	margin: 50px auto;
+	height: 240px;
+	width: 240px;
+	background-color: white;
+	color: white;
+}
+
+#dice{
+	margin: 50px auto;
+	height: 140px;
+	width: 140px;
 }

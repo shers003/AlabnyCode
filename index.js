@@ -181,11 +181,8 @@ var board =
  '','',''];
 var boxes = [];
 var over = false;
-var timeTic = 5000;
 
 const startTic = ()=>{
-	//ticTime();
-	//alert('Each go lasts '+timeTic/1000 +' seconds')
 
 	var index = 0;
 	board.forEach((position)=>{
@@ -347,17 +344,6 @@ const checkWin = (symbol)=>{
 	}
 };
 
-const ticTime = ()=>{
-	const time = document.getElementById('timeTic');
-	const chosenTime = Number(time.value) * 10000;
-	if(isNaN(chosenTime) || chosenTime == ''){
-		console.log('nothing '+ timeTic);
-	}else{
-		timeTic = chosenTime;
-		console.log('something ' +timeTic);
-	}
-
-};
 
 /************Number Guesser *************/
 /*
@@ -383,6 +369,7 @@ const guessGame = ()=>{
 	higher.innerHTML = 'Game started';
 	lower.innerHTML = 'Enter a number'
 	userGuessInput.value = ''
+	count = 0;
 
 	userGuessInput.addEventListener('keydown', userGuess);
 
@@ -411,3 +398,12 @@ const userGuess = (e)=>{
 		}
 	}
 };
+
+/**********Dice roll game **********/
+
+const diceRoll = ()=>{
+	const diceRoll = Math.floor(Math.random()*6)+1;
+	const dice = document.getElementById('dice');
+
+	dice.src = 'imgs/dice'+diceRoll+'.png'
+}
