@@ -144,3 +144,30 @@ td:hover{
 	height: 140px;
 	width: 140px;
 }
+
+/********Word jumble *********/
+#jumbleBoard{
+	margin: 50px auto;
+	height: 240px;
+	width: 260px;
+	background-color: white;
+	color: white;
+}
+#wordJumble p{
+	font-size: 20px;
+}
+#jumbleWord{
+	margin-top: 10px;
+	color:black;
+	font-size: 40px;
+	font-weight: bold;
+	background-color: purple;
+}
+#userGuessJumble{
+	margin-top: 20px;
+}
+#finishJumbletxt{
+	background-color: purple;
+	margin-top: 10px;
+	height: 50%;
+}

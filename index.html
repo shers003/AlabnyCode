@@ -92,6 +92,9 @@
 									<li class="nav-item">
 									<a class="nav-link" href="#Dicegame">Dice Game</a>
 									</li>
+									<li class="nav-item">
+									<a class="nav-link" href="#wordJumble">word jumble Game</a>
+									</li>
 								</ul>
 							 </div>
 						</nav>
@@ -220,6 +223,29 @@
 						<div id="diceGameBoard">
 							<button type="button" name="button" onclick="diceRoll()">Roll</button>
 							<img id="dice" src="" alt="">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id='wordJumble'>
+				<div class="row">
+					<div class="col-lg-12">
+						<h1>Word jumble game</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<p>Guess the word, all words are singular and no caps</p>
+					</div>
+					<div class="col-lg-8">
+						<button type="button" name="button" onclick="jumbleGame()">Start game</button>
+						<div id="jumbleBoard">
+							<div id="jumbleWord">
+								Word
+							</div>
+							<input id="userGuessJumble" type="text" name="" value="">
+							<div id="finishJumbletxt">
+							</div>
 						</div>
 					</div>
 				</div>
