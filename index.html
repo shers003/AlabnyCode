@@ -6,7 +6,12 @@
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<script type="application/javascript" src="index.js"> </script>
+	<script type="application/javascript" src="js/index.js"> </script>
+	<script type="application/javascript" src="js/mission5.js"> </script>
+	<script type="application/javascript" src="js/ticTacToe.js"> </script>
+	<script type="application/javascript" src="js/numberGuesser.js"> </script>
+	<script type="application/javascript" src="js/wordJumble.js"> </script>
+	<script type="application/javascript" src="js/hangman.js"> </script>
 </head>
 <body>
 	<section>
@@ -95,13 +100,17 @@
 									<li class="nav-item">
 									<a class="nav-link" href="#wordJumble">word jumble Game</a>
 									</li>
+
+									<li class="nav-item">
+									<a class="nav-link" href="#hangman">Hangman</a>
+									</li>
 								</ul>
 							 </div>
 						</nav>
 					</div>
 					<div class='col-6'>
 						<div class="jumbotron">
-						  <h1 class="display-4">Baisically!!</h1>
+						  <h1 class="display-4">Basically!!</h1>
 						  <p class="lead">I am the a low level fututre master computer wizard</p>
 						  <hr class="my-4">
 						  <p>This is a indisputable fact</p>
@@ -130,22 +139,22 @@
 						<div id="board">
 							<h3 id="score"></h3>
 							<div class="character">
-								1
+								<img class="m5Character" src="imgs/guest.png" alt="">
 							</div>
 							<div class="character">
-								2
+								<img class="m5Character" src="imgs/guest.png" alt="">
 							</div>
 							<div class="character">
-								3
+								<img class="m5Character" src="imgs/guest.png" alt="">
 							</div>
 							<div class="character">
-								4
+								<img class="m5Character" src="imgs/guest.png" alt="">
 							</div>
 							<div class="character">
-								5
+								<img class="m5Character" src="imgs/guest.png" alt="">
 							</div>
 							<div class="character">
-								6
+								<img class="m5Character" src="imgs/guest.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -161,7 +170,7 @@
 					<div class="col-lg-12">
 						<input type="button" onclick="startTic()" value="start">
 						<input type="text" id="timeTic" value="">
-						<p id="timer"> </p>
+						<p id="goTic"> </p>
 						<div class="ticMain">
 							<table>
 								<tr>
@@ -222,7 +231,7 @@
 					<div class="col-lg-12">
 						<div id="diceGameBoard">
 							<button type="button" name="button" onclick="diceRoll()">Roll</button>
-							<img id="dice" src="" alt="">
+							<img id="dice" src="imgs/dice1.png" alt="">
 						</div>
 					</div>
 				</div>
@@ -246,6 +255,27 @@
 							<input id="userGuessJumble" type="text" name="" value="">
 							<div id="finishJumbletxt">
 							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="hangman">
+				<div class="row">
+					<div class="col-lg-12">
+						<h1>Hangman</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<p>Enter a letter to save his life. I really don't want him
+						to die. This game is very dark!</p>
+					</div>
+					<div class="col-lg-8">
+						<button type="button" name="button"onclick="hangmanStart()">Start</button>
+						<div id="hangmanBoard">
+							<img id="hangmanImg"src="" alt="">
+							<h3 id="userTries"></h3>
+							<input type="text" id="hangmanLetter" value="">
 						</div>
 					</div>
 				</div>

@@ -69,6 +69,10 @@ ol{
 	margin: 10px;
 	float: left;
 }
+.m5Character{
+	width: 100px;
+	height: 100px;
+}
 
 .hidden{
 	visibility: hidden;
@@ -80,8 +84,9 @@ ol{
 }
 
 /********* TicTacToe ***********/
-#ticTacToe input{
-
+#ticTacToe #goTic{
+	color: black;
+	font-size: 20px;
 }
 
 .ticMain{
@@ -170,4 +175,21 @@ td:hover{
 	background-color: purple;
 	margin-top: 10px;
 	height: 50%;
+}
+
+/******* hangman**********/
+#hangmanBoard{
+	margin: 50px auto;
+	height: 240px;
+	width: 260px;
+	background-color: white;
+	color: white;
+}
+#userTries{
+	color: black;
+}
+#hangmanImg{
+	margin: 5px auto;
+	height: 140px;
+	width: 140px;
 }
