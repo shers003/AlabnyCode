@@ -4,11 +4,16 @@ var playerScore = 0;
 var characterVisbible = false;
 var time = 2000
 
+
 //triggered when user clicks start
 const startGame = ()=>{
-	const difficulty = confirm('press ok for hard difficulty');
-	console.log(difficulty);
-	time = difficulty? 1500:2500;
+	const userTimeInput = document.getElementById('userTimeInput')
+	const chosenTime = Number(userTimeInput.value)
+
+	if(chosenTime){
+		time = chosenTime
+	}
+
 	gameLoop();
 };
 

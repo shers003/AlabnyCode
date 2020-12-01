@@ -51,12 +51,3 @@ const userGuess = (e)=>{
 		}
 	}
 };
-
-/**********Dice roll game **********/
-
-const diceRoll = ()=>{
-	const diceRoll = Math.floor(Math.random()*6)+1;
-	const dice = document.getElementById('dice');
-
-	dice.src = 'imgs/dice'+diceRoll+'.png'
-}
